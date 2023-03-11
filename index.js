@@ -1,5 +1,7 @@
 
-const { Client, GatewayIntentBits, Partials } = require('discord.js');
+const { Cipher } = require('crypto');
+const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
+const { type } = require('os');
 const { TOKEN, PREFIX } = require('./Util/Util');
 
 const client = new Client({
@@ -23,7 +25,16 @@ const client = new Client({
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity(`${PREFIX}help and ${PREFIX}play`, { type: "LISTENING" });
+
+  client.user.setPresence({
+    activities: [{ name: 'Grabando Onlyfans' }],
+    status: 'online',
+  });
+
+  // client.user.setPresence({
+  //   activities: [{ name: `discord.js v14`, type: ActivityType.Watching }],
+  //   status: 'dnd',
+  // });
 
   client.channels.cache.get('1062216237020610662').send('Estoy Prendido')
 })
@@ -39,10 +50,11 @@ client.on('messageCreate', (message) => {
     message.channel.send("pong!");
   }
 
-  
-});
- 
 
+});
+
+
+client.commands = new Collection();
 
 client.login(TOKEN);
 client.prefix = PREFIX;
