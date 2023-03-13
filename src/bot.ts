@@ -1,6 +1,7 @@
 import { config } from 'dotenv';
 import { Client, GatewayIntentBits, Partials, Collection } from 'discord.js'
 import ready from "./listeners/ready";
+import interactionCreate from "./listeners/interactionCreate";
 
 config();
 
@@ -27,6 +28,7 @@ const client: Client = new Client({
 
 
 ready(client);
+interactionCreate(client);
 
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
