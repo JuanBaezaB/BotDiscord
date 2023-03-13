@@ -2,6 +2,14 @@
   "dependencies": {
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
+    "ts-node": "^10.9.1",
     "ytdl-core": "^4.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.1",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "ts-node src/Bot.ts"
   }
 }
