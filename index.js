@@ -27,7 +27,7 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 
   client.user.setPresence({
-    activities: [{ name: 'Grabando Onlyfans' }],
+    activities: [{ name: 'con tus sentimientos.' }],
     status: 'online',
   });
 
@@ -36,7 +36,7 @@ client.on("ready", () => {
   //   status: 'dnd',
   // });
 
-  client.channels.cache.get('1062216237020610662').send('Estoy Prendido')
+  client.channels.cache.get('1062216237020610662').send('Ya llegue perras')
 })
 
 
